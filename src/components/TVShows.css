@@ -1,0 +1,255 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg {
+    background-color: #fff;
+}
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* background-color: #f8f9fa; */
+    color: #333;
+}
+
+.tvshows-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tv-show-container {
+    margin: 20px 0;
+    padding: 20px;
+    /* background: #ffffff; */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tv-show-heading {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #444;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.tv-show-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: #ff6347;
+    border-radius: 2px;
+}
+
+.tv-show-heading:hover {
+    color: #ff6347;
+}
+
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    gap: 15px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.tv-show-card {
+    min-width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tv-show-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tv-show-poster {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.tv-show-card:hover .tv-show-poster {
+    transform: scale(1.1);
+}
+
+.tv-show-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.tv-show-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.tv-show-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.tv-show-rating {
+    font-size: 14px;
+    color: #ff6347;
+    margin-bottom: 5px;
+}
+
+.tv-show-genre {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tv-show-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 99, 71, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.scroll-button.scroll-left {
+    left: 10px;
+}
+
+.scroll-button.scroll-right {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background: rgba(255, 69, 0, 0.8);
+}
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #444;
+    margin: 40px 0 20px;
+    text-align: center;
+    position: relative;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #ff6347;
+    border-radius: 2px;
+}
+
+.tv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.tv-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.tv-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.tv-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.movie-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.movie-info p {
+    font-size: 14px;
+    color: #777;
+}
+
+.tv-card:hover .movie-info h3 {
+    color: #ff6347;
+}
+
+@media screen and (max-width: 768px) {
+    .tv-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tv-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

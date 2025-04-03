@@ -1,0 +1,39 @@
+
+
+.movie-list-container {
+    padding: 20px;
+}
+  
+  .movie-list-heading, .title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(41, 41, 61); /* Netflix primary color */
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+
+  
+  .movie-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+
+  
